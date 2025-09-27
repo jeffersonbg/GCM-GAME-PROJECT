@@ -24,11 +24,11 @@ O QuizPlanet é um jogo educativo interativo focado nos Objetivos de Desenvolvim
 
 Este projeto foi desenvolvido como um projeto prático da disciplina de Gerenciamento de Configuração e Mudança (GCM) com os seguintes objetivos:
 
-- Conscientização: Promover o conhecimento e a importância do ODS 15.
+- **Conscientização**: Promover o conhecimento e a importância do ODS 15.
 
-- Modularidade: Aplicar uma arquitetura em camadas para garantir a escalabilidade e a fácil manutenção do sistema.
+- **Modularidade**: Aplicar uma arquitetura em camadas para garantir a escalabilidade e a fácil manutenção do sistema.
 
-- Gamificação: Utilizar mecânicas de jogo (plantio/corte de árvores) para engajar o usuário.
+- **Gamificação**: Utilizar mecânicas de jogo (plantio/corte de árvores) para engajar o usuário.
 
 ---
 
@@ -49,11 +49,11 @@ O jogo implementa os seguintes Requisitos Funcionais (RFs) essenciais:
 
 - **Cadastro e Login**: Os usuários podem se cadastrar e fazer login com segurança (senhas armazenadas criptografadas com bcrypt, e dados trafegando via HTTPS).
 
-- **Mecânica da Floresta (RF04)**: A cada 3 acertos consecutivos, uma árvore é plantada. A cada erro, uma árvore é cortada. O jogo termina se as árvores chegarem a zero (Derrota) ou se a meta for atingida (Vitória).
+- **Mecânica da Floresta**: A cada 3 acertos consecutivos, uma árvore é plantada. A cada erro, uma árvore é cortada. O jogo termina se as árvores chegarem a zero (Derrota) ou se a meta for atingida (Vitória).
 
-- **Perguntas Dinâmicas (RF03)**: Apresentação de perguntas em formato de múltipla escolha ou Verdadeiro/Falso, focadas no ODS 15 (Vida Terrestre).
+- **Perguntas Dinâmicas**: Apresentação de perguntas em formato de múltipla escolha ou Verdadeiro/Falso, focadas no ODS 15 (Vida Terrestre).
 
-- **Persistência de Progresso (RF06)**: O progresso do jogador (contagem de árvores, acertos, fase atual) é salvo automaticamente no banco de dados e recuperado ao fazer login.
+- **Persistência de Progresso**: O progresso do jogador (contagem de árvores, acertos, fase atual) é salvo automaticamente no banco de dados e recuperado ao fazer login.
 
 ---
 
@@ -140,3 +140,12 @@ Este projeto está sob a licença [ MIT License ](https://github.com/jeffersonbg
 
 - Thiago Luan Moreira Sousa (Front-end)
     - https://github.com/thiagoluann
+
+
+---
+
+### 🔗 Documentação
+- [Requisitos do jogo](https://docs.google.com/document/d/1lUXlBRyqNz9rVae9b8zsJsYV0vEYcgdMuAr1WiOTskY/edit?tab=t.0)
+- [Diagrama de classe](https://docs.google.com/document/d/1yWixvAzlnHq2CHt0LwuWt3nCclA4Jcqk7iz9Stoy9oI/edit?tab=t.0)
+- [Diagrama de caso de uso](https://docs.google.com/document/d/1N6QFBOHwAw0s4N8kH5zivTLoxWTyY_rW6iF1yUaWBU8/edit?tab=t.0)
+- [Plano de teste]()
