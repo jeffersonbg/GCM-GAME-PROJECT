@@ -10,6 +10,7 @@
 - [Contribuição](#-contribuição)
 - [Licença](#-licença)
 - [Contribuidores](#-contribuidores)
+- [Documentação](#-documentação)
 
 
 ---
@@ -148,4 +149,5 @@ Este projeto está sob a licença [ MIT License ](https://github.com/jeffersonbg
 - [Requisitos do jogo](https://docs.google.com/document/d/1lUXlBRyqNz9rVae9b8zsJsYV0vEYcgdMuAr1WiOTskY/edit?tab=t.0)
 - [Diagrama de classe](https://docs.google.com/document/d/1yWixvAzlnHq2CHt0LwuWt3nCclA4Jcqk7iz9Stoy9oI/edit?tab=t.0)
 - [Diagrama de caso de uso](https://docs.google.com/document/d/1N6QFBOHwAw0s4N8kH5zivTLoxWTyY_rW6iF1yUaWBU8/edit?tab=t.0)
-- [Plano de teste]()
+- [Plano de teste](https://docs.google.com/document/d/1eKKqIHF77yxDSQ3RtKv5W5tHM_5xKljXWdFKDcMkQog/edit?usp=sharing)
+- [Caso de teste](https://docs.google.com/document/d/1o3us2Y70kHfacvwnVPKKwn8vnCYAGLcyksNvyp1t9uE/edit?tab=t.0)
