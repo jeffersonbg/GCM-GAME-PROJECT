@@ -40,7 +40,7 @@ O projeto adota uma arquitetura full-stack moderna, com a seguinte separação d
 | Camada                            | Tecnologia Principal | Frameworks/Bibliotecas  | Descrição                                                                                                     |
 | --------------------------------- | -------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------- |
 | Apresentação (Frontend)           | React                | HTML, CSS, JavaScript   | Interface de usuário dinâmica, responsável por exibir as perguntas e interagir com o jogador.                 |
-| Lógica e Acesso a Dados (Backend) | Python               | Flask, Flask-SQLAlchemy | Gerencia a lógica do jogo (pontuação, regras de árvores), validações de segurança, e a persistência de dados. |
+| Lógica e Acesso a Dados (Backend) | Python               | Django, Django ORM | Gerencia a lógica do jogo (pontuação, regras de árvores), validações de segurança, e a persistência de dados. |
 
 ---
 
@@ -62,7 +62,7 @@ O jogo implementa os seguintes Requisitos Funcionais (RFs) essenciais:
 
 Para rodar o projeto localmente, siga os passos abaixo para configurar o backend (Python) e o frontend (React).
 
-1. Configuração do Backend (Python/Flask)
+1. Configuração do Backend (Python/Django)
 
    1. Navegue para a pasta do Backend:
 
@@ -92,12 +92,13 @@ Para rodar o projeto localmente, siga os passos abaixo para configurar o backend
       ```bash
       pip install -r requirements.txt
       ```
-   4. Execute o servidor Flask:
+   4. Execute as migrações e o servidor Django:
       ```bash
-      pip install -r requirements.txt
+      python manage.py migrate
+      python manage.py runserver
       ```
 
-   O backend estará disponível em http://localhost:5000
+   O backend estará disponível em http://localhost:8000
 
 
  2. Configuração do Frontend (React)
