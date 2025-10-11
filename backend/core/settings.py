@@ -54,6 +54,7 @@ INSTALLED_APPS = [
 
     # Apps locais
     'accounts',
+    'pergunta',
 
     # Terceiros
     'rest_framework',
