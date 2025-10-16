@@ -1,0 +1,81 @@
+.header {
+  background-color: #3baa47;
+  color: #fff;
+  padding: 1rem 0;
+}
+
+.container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  text-decoration: none;
+}
+
+.logo.logo {
+  font-family: 'HeroBump';
+  text-shadow: -2px -2px 4px #000;
+}
+
+.nav-list {
+  list-style: none;
+  display: flex;
+  gap: 2rem;
+  margin: 0;
+  padding: 0;
+}
+
+.nav-list li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.nav-list li a:hover {
+  color: #ddd;
+}
+
+.menu-toggle {
+  display: none; /* Oculta o botão por padrão em telas grandes */
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+/* Estilos Responsivos */
+@media (max-width: 768px) {
+  .nav {
+    display: none; /* Oculta o menu em telas pequenas por padrão */
+    flex-direction: column;
+    position: absolute;
+    top: 60px; /* Ajuste para o tamanho do seu header */
+    left: 0;
+    width: 100%;
+    background-color: #3baa47;
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  .nav.open {
+    display: flex; /* Exibe o menu quando a classe 'open' está presente */
+  }
+  
+  .nav-list {
+    flex-direction: column;
+    gap: 1.5rem;
+  }
+  
+  .menu-toggle {
+    display: block; /* Exibe o botão em telas pequenas */
+  }
+}
