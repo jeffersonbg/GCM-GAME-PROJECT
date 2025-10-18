@@ -40,4 +40,5 @@ urlpatterns = [
     # Registro de outras apps
     path('api/accounts/', include('accounts.urls')),
     path('api/pergunta/', include('pergunta.urls')),
+    path('api/progresso/', include('progresso.urls')),
 ]
