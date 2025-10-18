@@ -39,5 +39,5 @@ urlpatterns = [
 
     # Registro de outras apps
     path('api/accounts/', include('accounts.urls')),
-    path('api/perguntas/', include('perguntas.urls')),
+    path('api/pergunta/', include('pergunta.urls')),
 ]
