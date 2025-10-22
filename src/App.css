@@ -1,3 +1,6 @@
+/* ==========================
+   📦 Fonts
+========================== */
 @font-face {
   font-family: "HeroBump";
   src: url("./fonts/HeroBump.otf") format("opentype");
@@ -5,54 +8,77 @@
   font-style: normal;
 }
 
+/* ==========================
+   🌐 Global
+========================== */
 body {
-  font-family: "Open Sans";
   background-color: #c1deb5;
   color: #333;
   display: flex;
-  min-height: 100vh;
+  font-family: "Open Sans";
   margin: 0;
-}
-
-.page {
-  width: 100vw;
   min-height: 100vh;
 }
 
 .page {
   background-image: url("./assets/grass_texture__sandacz.webp");
   background-repeat: repeat;
+  min-height: 100vh;
+  width: 100vw;
 }
 
+/* ==========================
+   🧠 Quiz Container
+========================== */
 .quiz-container {
   background-color: #00bf63;
-  padding: 15px;
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  max-width: 1200px;
-  /* height: 800px; */
-  width: 90%;
-  text-align: center;
-  margin: auto;
-  margin-top: 20px;
-  margin-bottom: 20px;
   box-sizing: border-box;
+  margin: 20px auto;
+  max-width: 1200px;
+  padding: 15px;
+  text-align: center;
+  width: 90%;
+
+   /* <-- alterações abaixo */
+  display: flex;
+  flex-direction: column;
+  align-items: stretch; /* filhos ocupam 100% da largura do container */
+  max-height: calc(100vh - 200px); /* ajuste conforme altura do header/footer */
+  overflow: auto; /* permite rolagem quando o conteúdo ultrapassar */
+
+}
+
+.quiz-container > * {
+  width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
+  overflow-wrap: break-word;
+}
+
+.menu-screen h1,
+.playing-screen h1 {
+  font-size: clamp(1.5rem, 6vw, 4rem);
 }
 
 .quiz-container h1 {
   color: #2e8b57;
 }
 
+/* ==========================
+   🧾 Sobre
+========================== */
 .sobre {
   background-color: #3baa47;
-  padding: 20px;
   color: #fff;
+  padding: 20px;
 }
 
 .sobre h1 {
-  text-align: center;
   font-family: "HeroBump";
   font-size: 3rem;
+  text-align: center;
   text-shadow: -2px -2px 4px #000;
 }
 
@@ -63,28 +89,31 @@ body {
 }
 
 .descricao {
+  font-size: 1.3rem;
   margin: 0 auto;
   max-width: 1200px;
   text-align: justify;
-  font-size: 1.3rem;
 }
 
+/* ==========================
+   💻 Tecnologias
+========================== */
 .tecnologias {
-  border-top: 4px solid #c1deb5;
   background-color: #3baa47;
-  padding: 20px;
+  border-top: 4px solid #c1deb5;
   color: #fff;
+  padding: 20px;
 }
 
 .tecnologias h1 {
-  text-align: center;
   font-family: "HeroBump";
   font-size: 3rem;
+  text-align: center;
   text-shadow: -2px -2px 4px #000;
 }
 
 .tecnologias h2,
-strong {
+.tecnologias strong {
   font-family: "HeroBump";
   font-size: 2rem;
   text-shadow: -2px -2px 4px #000;
@@ -94,58 +123,34 @@ strong {
   color: #c1deb5;
 }
 
+/* ==========================
+   👨‍💻 Desenvolvedores
+========================== */
 .desenvolvedores {
-  border-top: 4px solid #c1deb5;
   background-color: #3baa47;
-  padding: 20px;
+  border-top: 4px solid #c1deb5;
   color: #fff;
   display: block;
-}
-
-.card-container {
-  margin: 0 auto;
-  max-width: 1200px;
-  display: flex;
-  justify-content: space-between;
+  padding: 20px;
 }
 
 .desenvolvedores h1 {
-  text-align: center;
   font-family: "HeroBump";
   font-size: 3rem;
+  text-align: center;
   text-shadow: -2px -2px 4px #000;
 }
 
-button {
-  background-color: #4caf50;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  font-size: 16px;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 8px;
-  transition: background-color 0.3s ease;
+.card-container {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  max-width: 1200px;
 }
 
-button:hover {
-  background-color: #45a049;
-}
-
-.option-button {
-  background-color: #f0f0f0;
-  color: #333;
-  border: 1px solid #ccc;
-  width: 100%;
-}
-
-.option-button:hover {
-  background-color: #e0e0e0;
-}
-
+/* ==========================
+   ✅ Resposta Correta/Errada
+========================== */
 .correct {
   background-color: #28a745;
   color: white;
@@ -157,10 +162,13 @@ button:hover {
 }
 
 .feedback-text {
-  margin-top: 15px;
   font-weight: bold;
+  margin-top: 15px;
 }
 
+/* ==========================
+   🧩 Menu Screen
+========================== */
 .menu-screen {
   color: #fff;
 }
@@ -171,6 +179,9 @@ button:hover {
   font-size: 128px;
 }
 
+/* ==========================
+   🕹️ Playing Screen
+========================== */
 .playing-screen {
   background-image: url("./assets/grassbackground.jpg");
   background-repeat: repeat;

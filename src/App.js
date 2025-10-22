@@ -4,6 +4,9 @@ import CardDev from "./components/CardDev";
 
 import FormularioCadastro from "./components/FormularioCadastro";
 import FormularioLogin from "./components/FormularioLogin";
+import MenuGame from "./components/MenuGame";
+import Playing from "./components/Playing";
+import Introducao from "./components/Introducao";
 
 // Dados de exemplo (simulando a resposta do backend)
 const mockData = [
@@ -363,15 +366,17 @@ const mockData = [
 
 // Definição das telas do jogo
 const GAME_SCREENS = {
+  LOGIN: "login",
   MENU: "menu",
   PLAYING: "playing",
+  INTRODUCAO: "introducao",
   FEEDBACK: "feedback",
   GAME_OVER: "game_over",
   CREATE_ACCOUNT: "create_account",
 };
 
 function App() {
-  const [currentScreen, setCurrentScreen] = useState(GAME_SCREENS.MENU);
+  const [currentScreen, setCurrentScreen] = useState(GAME_SCREENS.LOGIN);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
   const [score, setScore] = useState(0);
   const [isCorrect, setIsCorrect] = useState(null);
@@ -405,8 +410,20 @@ function App() {
     setIsCorrect(null);
   };
 
+  const handleBackToLogin = () => {
+    setCurrentScreen(GAME_SCREENS.LOGIN);
+    setCurrentQuestionIndex(0);
+    setScore(0);
+  };
+
   const handleBackToMenu = () => {
     setCurrentScreen(GAME_SCREENS.MENU);
+    setCurrentQuestionIndex(0);
+    setScore(0);
+  };
+
+  const handleIntroducao = () => {
+    setCurrentScreen(GAME_SCREENS.INTRODUCAO);
     setCurrentQuestionIndex(0);
     setScore(0);
   };
@@ -420,156 +437,28 @@ function App() {
   // Renderiza o conteúdo baseado na tela atual
   const renderGameContent = () => {
     switch (currentScreen) {
-      case GAME_SCREENS.MENU:
+      case GAME_SCREENS.LOGIN:
         return (
           <FormularioLogin
             SwitchRegister={handleCreatAccount}
-            handleStartGame={handleStartGame}
+            handleStartGame={handleBackToMenu}
           />
         );
 
       case GAME_SCREENS.CREATE_ACCOUNT:
-        return <FormularioCadastro SwitchLogin={handleBackToMenu} />;
+        return <FormularioCadastro SwitchLogin={handleBackToLogin} />;
+
+      case GAME_SCREENS.MENU:
+        return <MenuGame novoJogo={handleIntroducao} telaLogin={handleBackToLogin}/>;
 
       case GAME_SCREENS.PLAYING:
         return (
-          <div
-            className="playing-screen"
-            style={{
-              display: "grid",
-              gridTemplateRows: "80px 1fr",
-              backgroundColor: "#008c48",
-              borderRadius: "15px",
-              padding: "15px 0",
-              height: "100vh",
-              boxSizing: "border-box",
-              maxWidth: "100vw",
-              overflow: "auto",
-            }}
-          >
-            <div
-              className="game-header"
-              style={{
-                display: "flex",
-                justifyContent: "space-between",
-                alignItems: "center",
-                maxWidth: "100%",
-                minWidth: "0",
-                boxSizing: "border-box",
-              }}
-            >
-              <div style={{ maxWidth: "100%", minWidth: "0" }}>
-                <button
-                  onClick={handleBackToMenu}
-                  className="back-button"
-                  style={{
-                    fontWeight: "700",
-                    backgroundColor: "#c0654f",
-                    borderBottom: "4px solid #8d4a3a",
-                    width: "90px",
-                    margin: "0 10px",
-                  }}
-                >
-                  Voltar
-                </button>
-              </div>
-              <div style={{ color: "#fff", maxWidth: "100%", minWidth: "0" }}>
-                <h2>
-                  Questão {currentQuestionIndex + 1} de {mockData.length}
-                </h2>
-              </div>
-              <div
-                style={{
-                  fontWeight: "700",
-                  color: "#fff",
-                  maxWidth: "100%",
-                  minWidth: "0",
-                  fontSize: "20px",
-                }}
-              >
-                <p className="score-display" style={{ margin: "0 10px" }}>
-                  Pontuação: {score}
-                </p>
-              </div>
-            </div>
+          <Playing handleBackToMenu={handleBackToMenu} currentQuestion={currentQuestion} currentQuestionIndex={currentQuestionIndex} score={score} mockData={mockData} handleAnswer={handleAnswer}/>
+        );
 
-            <div className="div-question"
-              style={{
-                display: "flex",
-                gap: "20px",
-                margin: "0 10px",
-                border: "4px solid #00bf63",
-                borderRadius: "15px",
-                padding: "20px",
-                backgroundColor: "#00592d",
-                maxWidth: "100%",
-                maxHeight: "100%",
-                minWidth: "0",
-                boxSizing: "border-box",
-                overflow: "auto",
-              }}
-            >
-              <div
-                style={{
-                  margin: "0 10px",
-                  alignContent: "center",
-                  backgroundColor: "#008c48",
-                  borderRadius: "15px",
-                  border: "4px solid #00bf63",
-                  padding: "15px",
-                  boxSizing: "border-box",
-                  maxWidth: "50%",
-                  minWidth: "0",
-                  overflow: "hidden",
-                }}
-              >
-                <h3
-                  style={{
-                    margin: "0",
-                    color: "#fff",
-                    maxWidth: "100%",
-                    overflowWrap: "break-word",
-                    fontSize: "3rem",
-                  }}
-                >
-                  {currentQuestion.question}
-                </h3>
-              </div>
-
-              <div
-                className="options-container"
-                style={{
-                  width: "50%",
-                  margin: "0 auto",
-                  maxWidth: "100%",
-                  minWidth: "0",
-                  boxSizing: "border-box",
-                  display: "flex",
-                  flexDirection: "column",
-                  justifyContent: "space-evenly",
-                }}
-              >
-                {currentQuestion.options.map((option) => (
-                  <button
-                    key={option.id}
-                    onClick={() => handleAnswer(option.id)}
-                    className="option-button"
-                    style={{
-                      maxWidth: "100%",
-                      boxSizing: "border-box",
-                      height: "48px",
-                      fontWeight: "600",
-                      color:"#fff",
-                      backgroundColor: "#c0654f",
-                      borderBottom: "4px solid #8d4a3a",
-                    }}
-                  >
-                    {option.text}
-                  </button>
-                ))}
-              </div>
-            </div>
-          </div>
+      case GAME_SCREENS.INTRODUCAO:
+        return(
+          <Introducao Playing={handleStartGame}/>
         );
 
       case GAME_SCREENS.FEEDBACK:
@@ -627,7 +516,7 @@ function App() {
 
   return (
     <div className="page">
-      <Header></Header>
+      <Header/>
       <div id="jogo" className="quiz-container">
         {renderGameContent()}
       </div>

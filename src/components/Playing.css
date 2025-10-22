@@ -1,0 +1,122 @@
+.playing-screen {
+  display: grid;
+  grid-template-rows: 80px 1fr;
+  background-color: #008c48;
+  border-radius: 15px;
+  padding: 15px 0;
+  height: 100vh;
+  box-sizing: border-box;
+  max-width: 100vw;
+  overflow: auto;
+}
+
+.game-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+}
+
+.back-button {
+  font-weight: 700;
+  background-color: #8b4513;
+  border-bottom: 4px solid #572b0c;
+  width: 90px;
+  margin: 0 10px;
+}
+
+button {
+  background-color: #4caf50;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+.playing-screen button:hover {
+  background-color: #572b0c;
+  border-bottom: 4px solid #8b4513;
+}
+
+.title-question {
+  color: #fff;
+}
+
+.score-display {
+  font-weight: 700;
+  color: #fff;
+  font-size: 20px;
+  margin: 0 10px;
+}
+
+.div-question {
+  display: flex;
+  gap: 20px;
+  margin: 0 10px;
+  border: 4px solid #00bf63;
+  border-radius: 15px;
+  padding: 20px;
+  background-color: #00592d;
+  max-width: 100%;
+  max-height: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow: auto;
+}
+
+.question-box {
+  margin: 0 10px;
+  align-content: center;
+  background-color: #008c48;
+  border-radius: 15px;
+  border: 4px solid #00bf63;
+  padding: 15px;
+  box-sizing: border-box;
+  max-width: 50%;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.question-box h3 {
+  margin: 0;
+  color: #fff;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  font-size: 3rem;
+}
+
+.options-container {
+  width: 50%;
+  margin: 0 auto;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.option-button {
+  max-width: 100%;
+  box-sizing: border-box;
+  height: 48px;
+  font-weight: 600;
+  color: #fff;
+  background-color: #8b4513;
+  border-bottom: 4px solid #572b0c;
+  margin-bottom: 10px;
+}
+
+.option-button:hover {
+  background-color: #572b0c;
+  border-bottom: 4px solid #8b4513;
+}

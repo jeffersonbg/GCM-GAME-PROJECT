@@ -1,0 +1,67 @@
+/* Estilos gerais do container do quiz */
+.quiz-fase-container, .resultado-fase {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+}
+
+.alternativas-container {
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.alternativa-btn {
+    padding: 15px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    cursor: pointer;
+    background-color: #f8f8f8;
+    transition: background-color 0.2s;
+}
+
+.alternativa-btn:hover:not(:disabled) {
+    background-color: #e0e0e0;
+}
+
+.alternativa-btn:disabled {
+    cursor: not-allowed;
+}
+
+/* Feedback visual */
+.feedback {
+    margin-top: 20px;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.feedback.correto {
+    color: #28a745; /* Verde */
+}
+
+.feedback.incorreto {
+    color: #dc3545; /* Vermelho */
+}
+
+/* Tela de resultado */
+.resultado-fase h2 {
+    color: #333;
+}
+
+.resultado-fase .vitoria {
+    color: #2e8b57; /* Verde escuro */
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.resultado-fase .derrota {
+    color: #b22222; /* Vermelho escuro */
+    font-size: 20px;
+    font-weight: bold;
+}
