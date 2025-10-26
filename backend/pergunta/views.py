@@ -1,11 +1,19 @@
 import random
-from rest_framework import viewsets
+from rest_framework import viewsets, status, permissions
 from rest_framework.decorators import action
 from rest_framework.response import Response
-from rest_framework.permissions import IsAuthenticatedOrReadOnly
 
 from .models import Pergunta
 from .serializers import PerguntaSerializer
+
+
+class IsCreateOrAuthenticated(permissions.BasePermission):
+    def has_permission(self, request, view):
+        # permite GET e POST públicos
+        if request.method in ["GET", "POST"]:
+            return True
+        return request.user and request.user.is_authenticated
+
 
 
 class PerguntaViewSet(viewsets.ModelViewSet):
@@ -14,17 +22,21 @@ class PerguntaViewSet(viewsets.ModelViewSet):
     """
     queryset = Pergunta.objects.all()
     serializer_class = PerguntaSerializer
-    permission_classes = [IsAuthenticatedOrReadOnly]
+    permission_classes = [IsCreateOrAuthenticated]
 
-    @action(detail=False, methods=['get'], url_path='aleatoria')
+    @action(detail=False, methods=["get"], url_path="aleatoria")
     def pergunta_aleatoria(self, request):
         """
         Retorna uma pergunta aleatória do banco de dados.
+        Se não houver perguntas, retorna 404.
         """
-        perguntas = list(self.queryset)
+        perguntas = list(Pergunta.objects.all())  # buscar diretamente, não usar self.queryset
         if not perguntas:
-            return Response({"detail": "Nenhuma pergunta cadastrada."}, status=404)
+            return Response(
+                {"detail": "Nenhuma pergunta cadastrada"},
+                status=status.HTTP_404_NOT_FOUND,
+            )
 
         pergunta = random.choice(perguntas)
         serializer = self.get_serializer(pergunta)
-        return Response(serializer.data)
+        return Response(serializer.data, status=status.HTTP_200_OK)
