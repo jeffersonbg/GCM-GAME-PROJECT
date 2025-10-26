@@ -16,6 +16,18 @@ class ProgressoViewSet(viewsets.ModelViewSet):
     """
     serializer_class = ProgressoSerializer
     permission_classes = [IsAuthenticated]
+    queryset = Progresso.objects.all()
+    
+    def list(self, request, *args, **kwargs):
+        progresso = Progresso.objects.filter(usuario=request.user).first()
+        if not progresso:
+            return Response(
+                {"detail": "Progresso não encontrado."},
+                status=status.HTTP_404_NOT_FOUND
+            )
+        serializer = self.get_serializer(progresso)
+        return Response(serializer.data)
+
 
     def get_queryset(self):
         return Progresso.objects.filter(usuario=self.request.user)
