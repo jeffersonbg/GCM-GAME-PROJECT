@@ -42,6 +42,15 @@ button {
   transition: background-color 0.3s ease;
 }
 
+button.next-button {
+  font-family: "Hero Bump";
+  width: 175px;
+  height: 50px;
+  font-weight: 700;
+  background-color: #8b4513;
+  border-bottom: 4px solid #572b0c;
+}
+
 .playing-screen button:hover {
   background-color: #572b0c;
   border-bottom: 4px solid #8b4513;

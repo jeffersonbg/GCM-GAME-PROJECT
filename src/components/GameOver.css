@@ -1,0 +1,40 @@
+.game-over-screen {
+  text-align: center;
+  padding: 2rem;
+}
+
+.final-stats {
+  margin: 2rem 0;
+}
+
+.game-over-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+}
+
+.restart-button,
+.menu-button {
+  padding: 0.8rem 1.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.restart-button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+}
+
+.menu-button {
+  font-family: "Hero Bump";
+  border-radius: 8px;
+  background-color: #8b4513;
+  border-bottom: 4px solid #572b0c;
+}
+
+.menu-button:hover:not(:disabled) {
+  background-color: #572b0c;
+  border-bottom: 4px solid #8b4513;
+}

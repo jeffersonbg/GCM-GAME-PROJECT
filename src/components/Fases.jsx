@@ -1,33 +1,55 @@
-import React from 'react';
-import './Fases.css';
+import React, { useState } from "react";
+import "./Fases.css";
+import QuizDaFase from "./QuizDaFase";
 
-// Dados de exemplo que viriam da sua API no futuro
-const mockFases = [
-  { id: 1, nome: 'Fase 1: O Solo', status: 'liberada' },
-  { id: 2, nome: 'Fase 2: As Florestas', status: 'liberada' },
-  { id: 3, nome: 'Fase 3: A Fauna', status: 'bloqueada' },
-  { id: 4, nome: 'Fase 4: Ecossistemas', status: 'bloqueada' },
-];
+const QUESTOESPORFASE = 3;
 
-const Fases = ({FaseSelecionada}) => {
-    return(
-        <div className="tela-fases-container">
-      <h2>Escolha uma Fase para Começar</h2>
-      <div className="fases-grid">
-        {mockFases.map((fase) => (
-          <button
-            key={fase.id}
-            className={`fase-item ${fase.status}`} // A classe muda com base no status
-            onClick={() => FaseSelecionada(fase.id)}
-            disabled={fase.status === 'bloqueada'} // Desabilita o botão se a fase estiver bloqueada
-          >
-            <h3>{fase.nome}</h3>
-            {fase.status === 'bloqueada' && <span className="lock-icon">🔒</span>}
-          </button>
-        ))}
+const Fases = ({
+  mockPerguntas = [],
+  voltarMenu,
+  voltarFloresta,
+  onFaseSelect,
+  fasesCompletas = [],
+}) => {
+  const totalPerguntas = mockPerguntas.length;
+  const numeroDeFases = Math.ceil(totalPerguntas / QUESTOESPORFASE);
+
+  const fases = Array.from({ length: numeroDeFases }, (_, i) => ({
+    id: i + 1,
+    nome: `Fase ${i + 1}`,
+  }));
+
+  const iniciarFase = (faseId) => {
+    if (onFaseSelect) {
+      onFaseSelect(faseId);
+    }
+  };
+
+  return (
+    <div className="tela-fases-container">
+      <div className="fase-title">
+        <button className="btn" onClick={voltarMenu}>
+          Voltar Menu
+        </button>
+        <h2>Fases</h2>
+        <button className="btn" onClick={voltarFloresta}>
+          Floresta
+        </button>
       </div>
+      {fases.map((fase) => (
+        <button
+          className={`fase-item ${
+            fasesCompletas.includes(fase.id) ? "completa" : ""
+          }`}
+          key={fase.id}
+          onClick={() => iniciarFase(fase.id)}
+        >
+          {fase.nome}
+          {fasesCompletas.includes(fase.id) && " ✓"}
+        </button>
+      ))}
     </div>
-    );
+  );
 };
 
 export default Fases;

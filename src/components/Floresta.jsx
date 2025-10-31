@@ -1,16 +1,21 @@
-import React from 'react';
-import './Floresta.css';
+import React from "react";
+import "./Floresta.css";
 
-import imagemArvore from './assets/arvore-plantada.png';
-import imagemTerreno from './assets/terreno-vazio.png';
+import imagemArvore from "../assets/pngwing.png";
+import imagemTerreno from "../assets/terratexture.png";
 
-const Floresta = ({arvoresAtuais, metaDeArvores}) =>{
-    const slotsDaFloresta = Array.from({length: metaDeArvores});
-    return(
-        <div className="container-floresta">
+const Floresta = ({ arvoresAtuais, metaDeArvores , voltarMenu, irFases}) => {
+  const slotsDaFloresta = Array.from({ length: metaDeArvores });
+  return (
+    <div className="container-floresta">
       <h2>Sua Floresta</h2>
       <p>Veja seu progresso! Cada árvore representa seu esforço.</p>
-      
+
+      <div className="buttons-floresta">
+        <button onClick={voltarMenu}>Voltar Menu</button>
+        <button onClick={() => irFases(null)}>Fases</button>
+      </div>
+
       <div className="slots-container">
         {slotsDaFloresta.map((_, index) => {
           // Se o índice for menor que o número de árvores, mostra a árvore plantada
@@ -31,7 +36,7 @@ const Floresta = ({arvoresAtuais, metaDeArvores}) =>{
         })}
       </div>
     </div>
-    );
+  );
 };
 
 export default Floresta;

@@ -1,67 +1,113 @@
 /* Estilos gerais do container do quiz */
-.quiz-fase-container, .resultado-fase {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 15px;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-    width: 80%;
-    max-width: 700px;
-    text-align: center;
+.quiz-fase-container,
+.resultado-fase {
+  margin: 0 auto;
+  text-align: center;
+  box-sizing: border-box;
+  background-color: #00592d;
+  padding: 1rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1) inset;
+  max-width: 99.9%;
+  height: 100%;
+  width: 100%;
 }
 
-.alternativas-container {
-    margin-top: 20px;
-    display: flex;
-    flex-direction: column;
+.quiz-fase-container h2,
+h3 {
+  color: #fff;
+}
+
+.quiz-title{
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    background-color: #00bf63 ;
+    border-radius: 15px;
+    align-items: center;
+    justify-items: center;
+    padding: 0 10px;
+    box-sizing: border-box;
+}
+
+.back-btn{
+    font-family: "Hero Bump";
+    width: 150px;
+    height: 50px;
+    font-weight: 700;
+    background-color: #8b4513;
+    border-bottom: 4px solid #572b0c ;
+}
+.back-btn:hover:not(:disabled) {
+  background-color: #572b0c;
+  border-bottom: 4px solid #8b4513;
+}
+
+.quiz-questao{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
     gap: 10px;
 }
 
+.quiz-questao h3{
+    font-size: 28px;
+}
+
+.alternativas-container {
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
 .alternativa-btn {
-    padding: 15px;
-    font-size: 16px;
-    border: 1px solid #ccc;
-    border-radius: 8px;
-    cursor: pointer;
-    background-color: #f8f8f8;
-    transition: background-color 0.2s;
+  padding: 15px;
+  font-size: 16px;
+  font-weight: 600;
+  border-bottom: 4px solid #572b0c;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: #8b4513;
+  transition: background-color 0.2s;
 }
 
 .alternativa-btn:hover:not(:disabled) {
-    background-color: #e0e0e0;
+  background-color: #572b0c;
+  border-bottom: 4px solid #8b4513;
 }
 
 .alternativa-btn:disabled {
-    cursor: not-allowed;
+  cursor: not-allowed;
 }
 
 /* Feedback visual */
 .feedback {
-    margin-top: 20px;
-    font-size: 18px;
-    font-weight: bold;
+  margin-top: 20px;
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .feedback.correto {
-    color: #28a745; /* Verde */
+  color: #00bf63; /* Verde */
 }
 
 .feedback.incorreto {
-    color: #dc3545; /* Vermelho */
+  color: #dc3545; /* Vermelho */
 }
 
 /* Tela de resultado */
 .resultado-fase h2 {
-    color: #333;
+  color: #fff;
 }
 
 .resultado-fase .vitoria {
-    color: #2e8b57; /* Verde escuro */
-    font-size: 20px;
-    font-weight: bold;
+  color: #2e8b57; /* Verde escuro */
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .resultado-fase .derrota {
-    color: #b22222; /* Vermelho escuro */
-    font-size: 20px;
-    font-weight: bold;
+  color: #b22222; /* Vermelho escuro */
+  font-size: 20px;
+  font-weight: bold;
 }

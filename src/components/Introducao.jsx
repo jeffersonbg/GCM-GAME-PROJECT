@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import "./Introducao.css";
 import TerraTexture from "../assets/terratexture.png";
 import Arvore from "../assets/pngwing.png";

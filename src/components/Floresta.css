@@ -1,0 +1,61 @@
+.container-floresta {
+  width: 100%;
+}
+.container-floresta h2 {
+  font-family: "Hero Bump";
+  color: #fff;
+}
+
+.container-floresta p {
+  font-family: "Open Sans";
+  font-weight: 600;
+  color: #fff;
+  margin: 0;
+}
+
+.buttons-floresta {
+  display: flex;
+  padding: 10px;
+  justify-content: space-between;
+}
+
+.buttons-floresta button {
+  font-family: "Hero Bump";
+  width: 130px;
+  background-color: #8b4513;
+  border-bottom: 4px solid #572b0c;
+}
+
+.buttons-floresta button:hover {
+  background-color: #572b0c;
+  border-bottom: 4px solid #8b4513;
+}
+
+.slots-container {
+  display: grid;
+  justify-items: center;
+  align-items: center;
+  border-radius: 12px;
+  box-sizing: border-box;
+  padding: 5px;
+  gap: 5px;
+  grid-template-columns: repeat(7, 1fr);
+  width: 100%;
+  background-image: url("../assets/grassbackground.jpg");
+  background-repeat: repeat;
+  background-size: 50px;
+}
+
+.slot-arvore {
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+}
+
+.slot-arvore img {
+  box-sizing: border-box;
+  border-radius: 12px;
+  width: 100px;
+  height: auto;
+  max-width: 100px;
+}
