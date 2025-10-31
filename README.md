@@ -1,70 +1,155 @@
-# Getting Started with Create React App
+# GCM GAME PROJECT
+![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Indice
+- [QuizPlanet](#-quizplanet-desafio-ods)
+- [Objetivos do projeto](#-objetivos-do-projeto)
+- [Tecnologias utilizadas](#-como-executar-o-projeto)
+- [Funcionalidades principais](#️-funcionalidades-principais)
+- [Como executar o projeto](#-como-executar-o-projeto)
+- [Contribuição](#-contribuição)
+- [Licença](#-licença)
+- [Contribuidores](#-contribuidores)
+- [Documentação](#-documentação)
 
-## Available Scripts
 
-In the project directory, you can run:
+---
 
-### `npm start`
+### 🌳 QuizPlanet: Desafio ODS
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+O QuizPlanet é um jogo educativo interativo focado nos Objetivos de Desenvolvimento Sustentável (ODS) da Organização das Nações Unidas (ONU), especificamente o ODS 15 (Vida Terrestre). O projeto combina aprendizado com uma mecânica de jogo envolvente de plantio e corte de árvores, onde cada acerto salva uma parte da floresta e cada erro a degrada.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+### 🎯 Objetivos do Projeto
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Este projeto foi desenvolvido como um projeto prático da disciplina de Gerenciamento de Configuração e Mudança (GCM) com os seguintes objetivos:
 
-### `npm run build`
+- **Conscientização**: Promover o conhecimento e a importância do ODS 15.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- **Modularidade**: Aplicar uma arquitetura em camadas para garantir a escalabilidade e a fácil manutenção do sistema.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- **Gamificação**: Utilizar mecânicas de jogo (plantio/corte de árvores) para engajar o usuário.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+### 🛠️ Tecnologias Utilizadas
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+O projeto adota uma arquitetura full-stack moderna, com a seguinte separação de camadas:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+| Camada                            | Tecnologia Principal | Frameworks/Bibliotecas  | Descrição                                                                                                     |
+| --------------------------------- | -------------------- | ----------------------- | ------------------------------------------------------------------------------------------------------------- |
+| Apresentação (Frontend)           | React                | HTML, CSS, JavaScript   | Interface de usuário dinâmica, responsável por exibir as perguntas e interagir com o jogador.                 |
+| Lógica e Acesso a Dados (Backend) | Python               | Django, Django ORM | Gerencia a lógica do jogo (pontuação, regras de árvores), validações de segurança, e a persistência de dados. |
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+---
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### ⚙️ Funcionalidades Principais
 
-## Learn More
+O jogo implementa os seguintes Requisitos Funcionais (RFs) essenciais:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- **Cadastro e Login**: Os usuários podem se cadastrar e fazer login com segurança (senhas armazenadas criptografadas com bcrypt, e dados trafegando via HTTPS).
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+- **Mecânica da Floresta**: A cada 3 acertos consecutivos, uma árvore é plantada. A cada erro, uma árvore é cortada. O jogo termina se as árvores chegarem a zero (Derrota) ou se a meta for atingida (Vitória).
 
-### Code Splitting
+- **Perguntas Dinâmicas**: Apresentação de perguntas em formato de múltipla escolha ou Verdadeiro/Falso, focadas no ODS 15 (Vida Terrestre).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- **Persistência de Progresso**: O progresso do jogador (contagem de árvores, acertos, fase atual) é salvo automaticamente no banco de dados e recuperado ao fazer login.
 
-### Analyzing the Bundle Size
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+### 🚀 Como Executar o Projeto
 
-### Making a Progressive Web App
+Para rodar o projeto localmente, siga os passos abaixo para configurar o backend (Python) e o frontend (React).
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+1. Configuração do Backend (Python/Django)
 
-### Advanced Configuration
+   1. Navegue para a pasta do Backend:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+      ```bash
+      cd backend/
+      ```
 
-### Deployment
+   2. Crie e Ative o Ambiente Virtual:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+      ```bash
+      python -m venv venv
+      ```
 
-### `npm run build` fails to minify
+      **Linux/macOS**
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+      ```bash
+      source venv/bin/activate
+      ```
+
+      **Windows**
+
+      ```bash
+      .\venv\Scripts\activate
+      ```
+
+   3. Instale as Dependências:
+      ```bash
+      pip install -r requirements.txt
+      ```
+   4. Execute as migrações e o servidor Django:
+      ```bash
+      python manage.py migrate
+      python manage.py runserver
+      ```
+
+   O backend estará disponível em http://localhost:8000
+
+
+ 2. Configuração do Frontend (React)
+    1. Navegue para a pasta do Frontend:
+        ```bash
+        cd frontend/ods-game
+        ```
+
+    2. Instale as dependencias:
+        ```bash
+        npm install
+        ```
+
+    3. Execute o servidor de desenvolvimento:
+        ```
+        npm start
+        ```
+
+        A aplicação React será aberta automaticamente no seu navegador, geralmente em http://localhost:3000.
+
+
+---
+
+### 🤝 Contribuição
+Contribuições são bem-vindas! Se você encontrou um bug ou tem uma sugestão de melhoria, sinta-se à vontade para abrir uma Issue ou enviar um Pull Request.
+
+---
+
+### 📄 Licença
+Este projeto está sob a licença [ MIT License ](https://github.com/jeffersonbg/GCM-GAME-PROJECT?tab=MIT-1-ov-file).
+
+---
+
+### 🤝 Contribuidores 
+
+- Jefferson Bezerra da Gama (Front-end) 
+    - https://github.com/jeffersonbg
+
+- Pedro Henrique Souza Pessoa (Back-end)
+    - https://github.com/Pedro-Pesssoa
+
+- Thiago Luan Moreira Sousa (Front-end)
+    - https://github.com/thiagoluann
+
+
+---
+
+### 🔗 Documentação
+- [Requisitos do jogo](https://docs.google.com/document/d/1lUXlBRyqNz9rVae9b8zsJsYV0vEYcgdMuAr1WiOTskY/edit?tab=t.0)
+- [Diagrama de classe](https://docs.google.com/document/d/1yWixvAzlnHq2CHt0LwuWt3nCclA4Jcqk7iz9Stoy9oI/edit?tab=t.0)
+- [Diagrama de caso de uso](https://docs.google.com/document/d/1N6QFBOHwAw0s4N8kH5zivTLoxWTyY_rW6iF1yUaWBU8/edit?tab=t.0)
+- [Plano de teste](https://docs.google.com/document/d/1eKKqIHF77yxDSQ3RtKv5W5tHM_5xKljXWdFKDcMkQog/edit?usp=sharing)
+- [Caso de teste](https://docs.google.com/document/d/1o3us2Y70kHfacvwnVPKKwn8vnCYAGLcyksNvyp1t9uE/edit?tab=t.0)
+
