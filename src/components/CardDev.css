@@ -1,0 +1,69 @@
+.card-dev {
+  width: 280px;
+  /*background-color: #fff;*/
+  border-radius: 12px;
+  overflow: hidden;
+  /*box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);*/
+  text-align: center;
+  margin: 20px;
+  /*transition: transform 0.3s ease, box-shadow 0.3s ease;*/
+  justify-items: center;
+}
+
+/* --- Área da Foto --- */
+.card-dev-foto {
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 4px solid #c1deb5;
+}
+
+.card-dev-foto img {
+  width: 100%;
+  height: 100%;
+  object-position: center;
+  object-fit: cover; /* Garante que a imagem preencha o espaço sem distorcer */
+  transition: transform 0.5s ease;
+}
+
+/* --- Informações --- */
+.card-dev-info {
+  padding: 20px 15px;
+}
+
+.card-dev-nome {
+  font-family: "HeroBump";
+  margin: 0 0 5px 0;
+  font-size: 1.5rem;
+  color: #fff;
+}
+
+.card-dev-especialidade {
+  margin: 0 0 15px 0;
+  font-size: 1.3rem;
+  color: #c1deb5; /* Destaque azul para a especialidade */
+  font-weight: 600;
+  font-family: "Open Sans";
+}
+
+/* --- Redes Sociais --- */
+.card-dev-redes {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-top: 15px;
+}
+
+.social-icon {
+  font-size: 1.8rem;
+  color: #c1deb5;
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+/* Estilo para os ícones de texto (se não usar react-icons) */
+.social-icon span {
+  display: inline-block;
+  transform: translateY(2px); /* Ajuste visual para ícones de texto */
+}
