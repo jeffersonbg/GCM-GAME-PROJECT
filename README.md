@@ -102,9 +102,9 @@ Para rodar o projeto localmente, siga os passos abaixo para configurar o backend
 
 
  2. Configuração do Frontend (React)
-    1. Navegue para a pasta do Frontend:
+    1. Navegue para a raiz do projeto GCM-GAME-PROJECT:
         ```bash
-        cd frontend/ods-game
+        cd GCM-GAME-PROJECT
         ```
 
     2. Instale as dependencias:
