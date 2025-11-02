@@ -2,6 +2,9 @@ from django.db import models
 
 
 class Pergunta(models.Model):
+    """
+    Model que representa uma pergunta
+    """
     TIPO_VERDADEIRO_FALSO = 'VF'
     TIPO_MULTIPLA_ESCOLHA = 'ME'
 
@@ -32,6 +35,9 @@ class Pergunta(models.Model):
 
 
 class Alternativa(models.Model):
+    """
+    Model que representa uma alternativa e que liga perguntas com alterntivas
+    """
     pergunta = models.ForeignKey(
         Pergunta,
         on_delete=models.CASCADE,
