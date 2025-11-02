@@ -15,8 +15,16 @@ def pergunta_com_alternativas(db):
         texto="A Amazônia é o maior bioma terrestre do mundo?",
         tipo="VF"
     )
-    Alternativa.objects.create(pergunta=pergunta, texto="Verdadeiro", is_correta=True)
-    Alternativa.objects.create(pergunta=pergunta, texto="Falso", is_correta=False)
+    Alternativa.objects.create(
+        pergunta=pergunta,
+        texto="Verdadeiro",
+        is_correta=True
+    )
+    Alternativa.objects.create(
+        pergunta=pergunta,
+        texto="Falso",
+        is_correta=False
+    )
     return pergunta
 
 
@@ -29,7 +37,11 @@ def test_criar_pergunta(api_client):
         "texto": "ODS 15 está relacionada à vida terrestre?",
         "tipo": "VF"
     }
-    response = api_client.post("/api/pergunta/perguntas/", payload, format="json")
+    response = api_client.post(
+        "/api/pergunta/perguntas/",
+        payload,
+        format="json"
+    )
 
     assert response.status_code == status.HTTP_201_CREATED
     assert Pergunta.objects.filter(texto__icontains="ODS 15").exists()

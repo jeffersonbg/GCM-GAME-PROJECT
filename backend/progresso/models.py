@@ -10,9 +10,18 @@ class Progresso(models.Model):
         on_delete=models.CASCADE,
         related_name='progresso'
     )
-    arvores = models.PositiveIntegerField(default=5, help_text="Quantidade atual de árvores.")
-    meta_arvores = models.PositiveIntegerField(default=10, help_text="Meta de árvores para vencer.")
-    acertos_consecutivos = models.PositiveIntegerField(default=0, help_text="Acertos consecutivos até plantar uma árvore.")
+    arvores = models.PositiveIntegerField(
+        default=5,
+        help_text="Quantidade atual de árvores."
+    )
+    meta_arvores = models.PositiveIntegerField(
+        default=10, 
+        help_text="Meta de árvores para vencer."
+    )
+    acertos_consecutivos = models.PositiveIntegerField(
+        default=0,
+        help_text="Acertos consecutivos até plantar uma árvore."
+    )
     total_acertos = models.PositiveIntegerField(default=0)
     total_erros = models.PositiveIntegerField(default=0)
     fase_atual = models.PositiveIntegerField(default=1)

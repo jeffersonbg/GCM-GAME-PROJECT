@@ -152,4 +152,4 @@ Este projeto está sob a licença [ MIT License ](https://github.com/jeffersonbg
 - [Diagrama de caso de uso](https://docs.google.com/document/d/1N6QFBOHwAw0s4N8kH5zivTLoxWTyY_rW6iF1yUaWBU8/edit?tab=t.0)
 - [Plano de teste](https://docs.google.com/document/d/1eKKqIHF77yxDSQ3RtKv5W5tHM_5xKljXWdFKDcMkQog/edit?usp=sharing)
 - [Caso de teste](https://docs.google.com/document/d/1o3us2Y70kHfacvwnVPKKwn8vnCYAGLcyksNvyp1t9uE/edit?tab=t.0)
-
+- [SonarQube](https://sonarcloud.io/summary/overall?id=Pedro-Pesssoa_GCM-GAME-PROJECT&branch=main)
