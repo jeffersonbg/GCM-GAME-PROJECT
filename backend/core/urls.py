@@ -30,15 +30,35 @@ urlpatterns = [
     path('admin/', admin.site.urls),
 
     # Documentação via Swagger
-    path('swagger/', schema_view.with_ui('swagger', cache_timeout=0), name='schema-swagger-ui'),
+    path('swagger/',
+         schema_view.with_ui(
+            'swagger',
+            cache_timeout=0
+        ), 
+        name='schema-swagger-ui'),
 
     # Endpoints de auth
-    path('api/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
-    path('api/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
-    path('api/token/logout/', TokenBlacklistView.as_view(), name='token_blacklist'),
+    path('api/token/',
+        TokenObtainPairView.as_view(),
+        name='token_obtain_pair'
+    ),
+    path('api/token/refresh/',
+        TokenRefreshView.as_view(),
+        name='token_refresh'
+    ),
+    path('api/token/logout/',
+        TokenBlacklistView.as_view(),
+        name='token_blacklist'
+    ),
 
     # Registro de outras apps
-    path('api/accounts/', include('accounts.urls')),
-    path('api/pergunta/', include('pergunta.urls')),
-    path('api/progresso/', include('progresso.urls')),
+    path('api/accounts/',
+        include('accounts.urls')
+    ),
+    path('api/pergunta/',
+        include('pergunta.urls')
+    ),
+    path('api/progresso/',
+        include('progresso.urls')
+    ),
 ]
